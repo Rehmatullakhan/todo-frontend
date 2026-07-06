@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
 
 function Signup() {
-const API_URL = "https://todo-backend-production-ea20.up.railway.app";
+// const API_URL = "https://todo-backend-production-ea20.up.railway.app";
 const[userData, setUserData]= useState();
 const navigate= useNavigate();
 
@@ -14,11 +14,11 @@ const navigate= useNavigate();
   })
 
 const handleSignup =async ()=>{
- let result =await fetch('http://localhost:3200/signup', {
+ let result =await fetch("https://todo-backend-production-ea20.up.railway.app/signup", {
       method:'POST',
       body:JSON.stringify(userData),
       headers: {
-        'Content-Type':'Application/json'
+        'Content-Type':'application/json'
       }
     })
     result =await result.json();
