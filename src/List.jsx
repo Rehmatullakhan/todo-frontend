@@ -21,12 +21,12 @@ const getListData=async ()=>{
     if(data.success){
        setListData(data.result); 
     }else{
-      alert("please fill the form");
+      alert("please fill ..... the form");
     }
 
 }
 const deleteTask =async (id)=>{
-     let item =await fetch('http://localhost:3200/delete/'+id, {method:'DELETE', credentials:'include'});
+     let item =await fetch('https://todo-backend-production-ea20.up.railway.app/delete/'+id, {method:'DELETE', credentials:'include'});
     item=await item.json();
     if(item.success){
 getListData();}
@@ -36,7 +36,7 @@ else{
 }
 
 const handleDeleteAll = async () =>{
-    await fetch('http://localhost:3200/delete-all/',{method:'DELETE',
+    await fetch('https://todo-backend-production-ea20.up.railway.app/delete-all/',{method:'DELETE',
        credentials:'include',
         headers:{'Content-type':'application/json'},
         body: JSON.stringify({ids:selectedTask})
