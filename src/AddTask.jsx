@@ -13,7 +13,7 @@ export function AddTask() {
       body:JSON.stringify(ataskData),
       credentials:'include',
       headers: {
-        'Content-Type':'Application/json'
+        'Content-Type':'application/json'
       }
     })
     result =await result.json();
