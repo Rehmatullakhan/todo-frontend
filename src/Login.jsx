@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Navbar from './Navbar';
 
 function Login() {
+ const API_URL = "https://todo-backend-production-ea20.up.railway.app"
   const[userData, setUserData]= useState();
   const navigate = useNavigate();
 
@@ -15,11 +16,11 @@ function Login() {
 
   const handleLogin =async ()=>{
     console.log(userData);
- let result =await fetch('http://localhost:3200/login', {
+ let result =await fetch(`${API_URL}/login`, {
       method:'POST',
       body:JSON.stringify(userData),
       headers: {
-        'Content-Type':'Application/json'
+        'Content-Type':'application/json'
       }
     });
     result =await result.json();
