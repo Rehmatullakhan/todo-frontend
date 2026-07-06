@@ -37,7 +37,7 @@ export function AddTask() {
      <Navbar/>
     </div>
 <div className='flex flex-col justify-center items-center  mt-5'>
-    <form onSubmit={taskHandler} className='h-120 w-150 bg-white gap-1 p-1 rounded-2xl shadow-[0_20px_60px_10px_rgba(0,0,0,0.4)]  flex flex-col justify-center '>
+    <div className='h-120 w-150 bg-white gap-1 p-1 rounded-2xl shadow-[0_20px_60px_10px_rgba(0,0,0,0.4)]  flex flex-col justify-center '>
       <h1 className='font-bold text-2xl mx-auto'>Add New Task</h1>
       <div className='ml-20 flex flex-col gap-1 mt-5'>
         <label htmlFor='title' className='font-bold pl-1'>Title:</label>
@@ -46,8 +46,8 @@ export function AddTask() {
       <textarea onChange={(e)=>asetTaskData({...ataskData,desc:e.target.value})} value={ataskData.desc} id='desc' type='text' placeholder='Enter task description' rows={4} className='outline-none border rounded-2xl border-gray-500 p-2 w-100'/>
     
       </div>
-<button  type='submit'  className='font-bold bg-blue-500 p-2 rounded text-white cursor-pointer w-30 mt-5 mx-auto hover:bg-blue-800'>Add Task</button>     
-    </form>
+<button  onClick={taskHandler}  className='font-bold bg-blue-500 p-2 rounded text-white cursor-pointer w-30 mt-5 mx-auto hover:bg-blue-800'>Add Task</button>     
+    </div>
     </div>
     </>
    
