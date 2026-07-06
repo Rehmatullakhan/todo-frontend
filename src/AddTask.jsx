@@ -8,7 +8,7 @@ export function AddTask() {
   const navigate = useNavigate();
 
   const taskHandler =async ()=>{
-    if(!asetTaskData.title || !ataskData.desc){
+    if(!ataskData.title || !ataskData.desc){
       alert("Please fill the form");
       return;
     }
