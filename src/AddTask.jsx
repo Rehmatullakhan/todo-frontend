@@ -8,7 +8,7 @@ export function AddTask() {
   const navigate = useNavigate();
 
   const taskHandler =async ()=>{
-    let result =await fetch('http://localhost:3200/add', {
+    let result =await fetch('https://todo-backend-production-ea20.up.railway.app/add', {
       method:'POST',
       body:JSON.stringify(ataskData),
       credentials:'include',
