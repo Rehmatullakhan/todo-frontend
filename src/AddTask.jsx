@@ -12,7 +12,7 @@ export function AddTask() {
       alert("Please fill the form");
       return;
     }
-    let result =await fetch('https://todo-backend-production-ea20.up.railway.app/add', {
+    let result =await fetch("https://todo-backend-production-ea20.up.railway.app/add", {
       method:'POST',
       body:JSON.stringify(ataskData),
       credentials:'include',
