@@ -14,7 +14,7 @@ getTask(id);
   },[])
 
  const getTask =async (id)=>{
-let data =await fetch('http://localhost:3200/task/'+id,{ credentials:'include',});
+let data =await fetch('https://todo-backend-production-ea20.up.railway.app/task/'+id,{ credentials:'include',});
 
 data =await data.json();
 
@@ -25,7 +25,7 @@ if(data.result){
 
 const updateTaskHandler= async ()=>{
  console.log("function csalled", taskData);
- let task = await fetch("http://localhost:3200/update-task",{
+ let task = await fetch("hhttps://todo-backend-production-ea20.up.railway.app/update-task",{
     method:'put',
     body:JSON.stringify(taskData),
      credentials:'include',
