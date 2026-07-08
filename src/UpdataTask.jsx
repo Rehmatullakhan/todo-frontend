@@ -25,7 +25,7 @@ if(data.result){
 
 const updateTaskHandler= async ()=>{
  console.log("function csalled", taskData);
- let task = await fetch("hhttps://todo-backend-production-ea20.up.railway.app/update-task",{
+ let task = await fetch("https://todo-backend-production-ea20.up.railway.app/update-task",{
     method:'put',
     body:JSON.stringify(taskData),
      credentials:'include',
