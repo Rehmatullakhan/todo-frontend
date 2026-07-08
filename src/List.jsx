@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
-import { Link } from 'react-router-dom';
+import { data, Link } from 'react-router-dom';
 
 
 function List() {
@@ -14,13 +14,13 @@ getListData();
 )
 
 const getListData=async ()=>{
-    let data =await fetch("https://todo-backend-production-ea20.up.railway.app/tasks",{
+    let res =await fetch("https://todo-backend-production-ea20.up.railway.app/tasks",{
       method:"GET",
       credentials:'include',
       headers:{"Content-Type":"application.json"}
     });
-    data=await data.json();
-    if(data.success){
+  let data=await res.json();
+    if(res.ok && data.success){
        setListData(data.result); 
     }else{
       alert("please fill ..... the form");
@@ -33,7 +33,7 @@ const deleteTask =async (id)=>{
     if(item.success){
 getListData();}
 else{
-      alert("please fill the form");
+      alert(data.message || "Unauthorized, Please login again");
     }
 }
 
