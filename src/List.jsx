@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
-import { data, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function List() {
@@ -23,7 +23,7 @@ const getListData=async ()=>{
     if(res.ok && data.success){
        setListData(data.result); 
     }else{
-      alert("please fill ..... the form");
+      alert(data.message || "Unauthorized, Please login again");
     }
 
 }
@@ -33,7 +33,7 @@ const deleteTask =async (id)=>{
     if(item.success){
 getListData();}
 else{
-      alert(data.message || "Unauthorized, Please login again");
+      alert("please fill the form");
     }
 }
 
