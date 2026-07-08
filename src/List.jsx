@@ -15,7 +15,9 @@ getListData();
 
 const getListData=async ()=>{
     let data =await fetch("https://todo-backend-production-ea20.up.railway.app/tasks",{
-      credentials:'include'
+      method:"GET",
+      credentials:'include',
+      headers:{"Content-Type":"application.json"}
     });
     data=await data.json();
     if(data.success){
